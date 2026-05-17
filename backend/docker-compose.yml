@@ -1,0 +1,38 @@
+services:
+  mysql:
+    image: mysql:8.4
+    environment:
+      MYSQL_DATABASE: busdb
+      MYSQL_USER: bus
+      MYSQL_PASSWORD: bus
+      # Dev default only — use a strong password if MySQL port is exposed publicly
+      MYSQL_ROOT_PASSWORD: root
+    # No host port: avoids clashing with a local MySQL on 3306. App reaches MySQL via Docker network.
+    # To open DB on the host, add: ports: ["3307:3306"]
+    volumes:
+      - mysql_data:/var/lib/mysql
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-uroot", "-proot"]
+      interval: 5s
+      timeout: 5s
+      retries: 15
+      start_period: 30s
+
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/busdb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: bus
+      SPRING_DATASOURCE_PASSWORD: bus
+      # Override in production (e.g. .env file): use a long random value, not the default below
+      APP_JWT_SECRET: ${APP_JWT_SECRET:-ChangeThisToASecure256BitSecretKeyForProductionUseOnly123456}
+    depends_on:
+      mysql:
+        condition: service_healthy
+
+volumes:
+  mysql_data:
