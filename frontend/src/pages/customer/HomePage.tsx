@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
@@ -79,11 +79,6 @@ export function HomePage() {
 
   const nextHero = () => setHeroIndex((i) => (i + 1) % HERO_BUS_IMAGES.length)
   const prevHero = () => setHeroIndex((i) => (i - 1 + HERO_BUS_IMAGES.length) % HERO_BUS_IMAGES.length)
-
-  useEffect(() => {
-    const timer = window.setInterval(nextHero, 5000)
-    return () => window.clearInterval(timer)
-  }, [])
 
   return (
     <Box>
@@ -169,6 +164,9 @@ export function HomePage() {
             <IconButton size="small" onClick={nextHero} aria-label="Next bus photo" sx={{ color: 'inherit', bgcolor: alpha('#fff', 0.12) }}>
               <ChevronRightIcon fontSize="small" />
             </IconButton>
+            <Typography variant="caption" sx={{ opacity: 0.85 }}>
+              {heroIndex + 1} / {HERO_BUS_IMAGES.length}
+            </Typography>
           </Stack>
 
           <Stack spacing={2} sx={{ maxWidth: { xs: '100%', md: '52%' } }}>
