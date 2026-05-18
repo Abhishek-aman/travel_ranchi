@@ -9,11 +9,11 @@ import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 import DashboardIcon from '@mui/icons-material/Dashboard'
 import AltRouteIcon from '@mui/icons-material/AltRoute'
-import DirectionsBusFilledIcon from '@mui/icons-material/DirectionsBusFilled'
 import InventoryIcon from '@mui/icons-material/Inventory2'
 import GroupsIcon from '@mui/icons-material/Groups'
 import RequestQuoteIcon from '@mui/icons-material/RequestQuote'
 import AssessmentIcon from '@mui/icons-material/Assessment'
+import DirectionsBusFilledIcon from '@mui/icons-material/DirectionsBusFilled'
 import Container from '@mui/material/Container'
 import Button from '@mui/material/Button'
 import { useAuth } from '../auth/useAuth'
@@ -53,7 +53,7 @@ export function AdminLayout() {
       >
         <Toolbar sx={{ px: 2, flexDirection: 'column', alignItems: 'stretch', gap: 1, py: 2 }}>
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <DirectionsBusFilledIcon color="primary" sx={{ mr: 1 }} />
+            <Box component="img" src="/favicon.svg" alt="" sx={{ width: 28, height: 28, mr: 1 }} />
             <Typography variant="h6" noWrap sx={{ fontWeight: 800, flex: 1 }}>
               Travel Ranchi Admin
             </Typography>

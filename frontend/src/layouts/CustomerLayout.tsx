@@ -8,7 +8,6 @@ import Typography from '@mui/material/Typography'
 import Stack from '@mui/material/Stack'
 import Link from '@mui/material/Link'
 import { alpha } from '@mui/material/styles'
-import DirectionsBusFilledIcon from '@mui/icons-material/DirectionsBusFilled'
 
 export function CustomerLayout() {
   const { pathname } = useLocation()
@@ -28,7 +27,7 @@ export function CustomerLayout() {
         })}
       >
         <Toolbar sx={{ py: 1, flexWrap: 'wrap', rowGap: 1 }}>
-          <DirectionsBusFilledIcon sx={{ color: 'primary.main', mr: 1.5, fontSize: 32 }} />
+          <Box component="img" src="/favicon.svg" alt="" sx={{ width: 34, height: 34, mr: 1.5 }} />
           <Typography variant="h6" component={RouterLink} to="/" sx={{ flexGrow: 1, textDecoration: 'none', color: 'inherit', fontWeight: 800 }}>
             Travel Ranchi
           </Typography>
