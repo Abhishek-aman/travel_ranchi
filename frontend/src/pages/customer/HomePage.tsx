@@ -259,7 +259,7 @@ export function HomePage() {
               Built for travellers & fleets
             </Typography>
             <Typography variant="h4" sx={{ fontWeight: 800, letterSpacing: -0.5 }}>
-              Why FleetLine
+              Why Travel Ranchi
             </Typography>
             <Typography color="text.secondary" sx={{ fontSize: '1.05rem', lineHeight: 1.65, mt: 1 }}>
               One place for travellers to book online, for agents to serve passengers at stops, and for your team to keep routes

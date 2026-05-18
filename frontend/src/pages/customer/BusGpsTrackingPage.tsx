@@ -11,8 +11,8 @@ export function BusGpsTrackingPage() {
   return (
     <>
       <Seo
-        title="Live bus GPS tracking | Share trip link with passengers | FleetLine"
-        description="See how FleetLine ties live GPS to scheduled trips so families and corporates can follow the coach on the map. Works with operator-approved tracking hardware and driver apps."
+        title="Live bus GPS tracking | Share trip link with passengers | Travel Ranchi"
+        description="See how Travel Ranchi ties live GPS to scheduled trips so families and corporates can follow the coach on the map. Works with operator-approved tracking hardware and driver apps."
         keywords="live bus GPS tracking, bus location tracker India, share bus trip link, fleet GPS for buses, real-time coach tracking"
         canonicalPath="/live-bus-gps-tracking"
       />
@@ -22,7 +22,7 @@ export function BusGpsTrackingPage() {
           Live bus GPS tracking for passengers and control rooms
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.75, mb: 3 }}>
-          Modern travellers expect a <strong>shareable tracking link</strong> the same way they expect e-tickets. FleetLine is designed so your dispatch team
+          Modern travellers expect a <strong>shareable tracking link</strong> the same way they expect e-tickets. Travel Ranchi is designed so your dispatch team
           can attach <strong>live GPS positions</strong> to each trip — reducing “where is my bus?” calls and improving safety audits. The map below is a
           placeholder embed; production builds typically integrate Google Maps Platform, Mapbox, or your telematics vendor feed via WebSocket.
         </Typography>

@@ -30,7 +30,7 @@ export function CustomerLayout() {
         <Toolbar sx={{ py: 1, flexWrap: 'wrap', rowGap: 1 }}>
           <DirectionsBusFilledIcon sx={{ color: 'primary.main', mr: 1.5, fontSize: 32 }} />
           <Typography variant="h6" component={RouterLink} to="/" sx={{ flexGrow: 1, textDecoration: 'none', color: 'inherit', fontWeight: 800 }}>
-            FleetLine
+            Travel Ranchi
           </Typography>
           <Stack direction="row" spacing={1} alignItems="center" flexWrap="wrap" useFlexGap>
             <Button component={RouterLink} to="/private-bus-hire-india" color="inherit" size="small">
@@ -51,7 +51,7 @@ export function CustomerLayout() {
         <Container maxWidth="lg">
           <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} justifyContent="space-between" alignItems={{ xs: 'flex-start', sm: 'center' }}>
             <Typography variant="body2" color="text.secondary">
-              © {new Date().getFullYear()} FleetLine
+              © {new Date().getFullYear()} Travel Ranchi
               {import.meta.env.DEV && (
                 <Box component="span" sx={{ display: { xs: 'none', sm: 'inline' }, ml: 1, opacity: 0.75 }}>
                   · Dev API {import.meta.env.VITE_API_BASE_URL ?? 'http://localhost:8080'}

@@ -55,7 +55,7 @@ export function AdminLayout() {
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <DirectionsBusFilledIcon color="primary" sx={{ mr: 1 }} />
             <Typography variant="h6" noWrap sx={{ fontWeight: 800, flex: 1 }}>
-              FleetLine Admin
+              Travel Ranchi Admin
             </Typography>
           </Box>
           <Typography variant="caption" color="text.secondary" noWrap>

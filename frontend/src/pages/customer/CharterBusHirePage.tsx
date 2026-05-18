@@ -60,7 +60,7 @@ export function CharterBusHirePage() {
     <>
       <Seo
         title="Private bus hire India | Complete charter booking enquiry | AC sleeper & seater"
-        description="Request a quote for private bus hire in India: corporate charters, weddings, school trips, and outstation tours. Volvo sleeper, seater, and hybrid coaches. Fast FleetLine operator response."
+        description="Request a quote for private bus hire in India: corporate charters, weddings, school trips, and outstation tours. Volvo sleeper, seater, and hybrid coaches. Fast Travel Ranchi operator response."
         keywords="private bus hire India, charter bus booking, AC sleeper bus rental, corporate bus hire, wedding bus booking, outstation bus package, complete bus booking enquiry, Volvo bus hire India"
         canonicalPath="/private-bus-hire-india"
       />
@@ -73,7 +73,7 @@ export function CharterBusHirePage() {
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.75, mb: 3 }}>
           Whether you need a <strong>Volvo AC sleeper bus for outstation tours</strong>, a <strong>2×2 seater coach for corporate transfers</strong>, or a{' '}
-          <strong>mixed-layout vehicle for weddings and college trips</strong>, FleetLine operators can price your itinerary end-to-end. Submit the enquiry
+          <strong>mixed-layout vehicle for weddings and college trips</strong>, Travel Ranchi operators can price your itinerary end-to-end. Submit the enquiry
           form below — include dates, passenger count, and any multi-day route so we can match you with the right{' '}
           <strong>bus type and compliance-ready crew</strong>. This page is structured for travellers and planners searching for{' '}
           <em>private bus hire India</em>, <em>charter bus booking</em>, and <em>complete bus booking</em> workflows on Google.
@@ -83,7 +83,7 @@ export function CharterBusHirePage() {
           <Box sx={{ mb: 4, borderRadius: 2, overflow: 'hidden', boxShadow: 2, aspectRatio: '16/9' }}>
             <Box
               component="iframe"
-              title="FleetLine charter and fleet overview"
+              title="Travel Ranchi charter and fleet overview"
               width="100%"
               height="100%"
               sx={{ border: 0, display: 'block', minHeight: { xs: 220, sm: 360 } }}
