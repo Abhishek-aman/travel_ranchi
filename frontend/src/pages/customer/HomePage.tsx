@@ -15,6 +15,7 @@ import BoltIcon from '@mui/icons-material/Bolt'
 import DirectionsBusFilledIcon from '@mui/icons-material/DirectionsBusFilled'
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
 import ChevronRightIcon from '@mui/icons-material/ChevronRight'
+import { Seo } from '../../components/Seo'
 
 const HERO_BUS_IMAGES = [
   {
@@ -32,11 +33,12 @@ const HERO_BUS_IMAGES = [
 ] as const
 
 const POPULAR_ROUTES: { label: string; origin: string; destination: string }[] = [
-  { label: 'Mumbai → Pune', origin: 'Mumbai', destination: 'Pune' },
-  { label: 'Delhi → Jaipur', origin: 'Delhi', destination: 'Jaipur' },
-  { label: 'Bangalore → Chennai', origin: 'Bangalore', destination: 'Chennai' },
-  { label: 'Hyderabad → Vijayawada', origin: 'Hyderabad', destination: 'Vijayawada' },
-  { label: 'Ahmedabad → Surat', origin: 'Ahmedabad', destination: 'Surat' },
+  { label: 'Ranchi → Patna', origin: 'Ranchi', destination: 'Patna' },
+  { label: 'Ranchi → Jamshedpur', origin: 'Ranchi', destination: 'Jamshedpur' },
+  { label: 'Ranchi → Kolkata', origin: 'Ranchi', destination: 'Kolkata' },
+  { label: 'Ranchi → Dhanbad', origin: 'Ranchi', destination: 'Dhanbad' },
+  { label: 'Ranchi → Bokaro', origin: 'Ranchi', destination: 'Bokaro' },
+  { label: 'Ranchi → Deoghar', origin: 'Ranchi', destination: 'Deoghar' },
 ]
 
 const FEATURES = [
@@ -61,8 +63,8 @@ export function HomePage() {
   const theme = useTheme()
   const navigate = useNavigate()
   const [heroIndex, setHeroIndex] = useState(0)
-  const [origin, setOrigin] = useState('Mumbai')
-  const [destination, setDestination] = useState('Pune')
+  const [origin, setOrigin] = useState('Ranchi')
+  const [destination, setDestination] = useState('Patna')
   const [date, setDate] = useState(() => new Date().toISOString().slice(0, 10))
 
   const onSearch = () => {
@@ -81,7 +83,14 @@ export function HomePage() {
   const prevHero = () => setHeroIndex((i) => (i - 1 + HERO_BUS_IMAGES.length) % HERO_BUS_IMAGES.length)
 
   return (
-    <Box>
+    <>
+      <Seo
+        title="Travel Ranchi | Ranchi Bus Booking, Jharkhand Bus Tickets Online"
+        description="Book bus tickets online from Ranchi and across Jharkhand. Search Ranchi to Patna, Jamshedpur, Kolkata, Dhanbad, Bokaro and Deoghar routes with seat selection and mobile tickets."
+        keywords="Ranchi bus booking, Jharkhand bus ticket booking, Ranchi to Patna bus, Ranchi to Jamshedpur bus, Ranchi to Kolkata bus, Ranchi to Dhanbad bus, Ranchi bus tickets online, Khadgara bus stand booking, Booti More bus booking, Kanta Toli bus booking"
+        canonicalPath="/"
+      />
+      <Box>
       <Box
         sx={{
           position: 'relative',
@@ -175,10 +184,10 @@ export function HomePage() {
               sx={{ alignSelf: 'flex-start', bgcolor: alpha('#fff', 0.15), color: 'inherit', fontWeight: 600 }}
             />
             <Typography variant="h2" component="h1" sx={{ fontSize: { xs: '2rem', md: '3rem' } }}>
-              Book intercity buses with seat-level certainty
+              Book Ranchi bus tickets with seat-level certainty
             </Typography>
             <Typography variant="h6" sx={{ opacity: 0.92, fontWeight: 400, maxWidth: 560 }}>
-              Search city-to-city routes, choose your seats, pay online, and travel with a ticket you can show on your phone.
+              Search Jharkhand and intercity routes, choose your seats, pay online, and travel with a ticket you can show on your phone.
             </Typography>
             <Stack direction="row" flexWrap="wrap" gap={1} sx={{ pt: 1 }}>
               <Typography variant="caption" sx={{ width: '100%', opacity: 0.85, fontWeight: 600, letterSpacing: 0.5 }}>
@@ -262,8 +271,8 @@ export function HomePage() {
               Why Travel Ranchi
             </Typography>
             <Typography color="text.secondary" sx={{ fontSize: '1.05rem', lineHeight: 1.65, mt: 1 }}>
-              One place for travellers to book online, for agents to serve passengers at stops, and for your team to keep routes
-              and buses under control — without juggling spreadsheets.
+              One place for Ranchi travellers to book online, for agents to serve passengers at stops like Khadgara Bus Stand,
+              Booti More, and Kanta Toli, and for your team to keep routes and buses under control — without juggling spreadsheets.
             </Typography>
           </Stack>
 
@@ -322,5 +331,6 @@ export function HomePage() {
         </Container>
       </Box>
     </Box>
+    </>
   )
 }
