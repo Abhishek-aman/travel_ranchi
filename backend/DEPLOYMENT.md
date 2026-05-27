@@ -78,6 +78,54 @@ Use strong unique values for:
 - `SPRING_DATASOURCE_PASSWORD` - same value as `MYSQL_PASSWORD`
 - `APP_JWT_SECRET`
 
+### WhatsApp Ticket Notifications
+
+WhatsApp ticket confirmations are feature-flagged and disabled by default.
+
+To keep the service off:
+
+```sh
+APP_WHATSAPP_ENABLED=false
+```
+
+To enable Gupshup WhatsApp API after the business phone number and template are approved:
+
+```sh
+APP_WHATSAPP_ENABLED=true
+APP_WHATSAPP_GUPSHUP_API_KEY=<gupshup-api-key>
+APP_WHATSAPP_GUPSHUP_SOURCE_NUMBER=<registered-whatsapp-source-number>
+APP_WHATSAPP_GUPSHUP_APP_NAME=<gupshup-app-name>
+APP_WHATSAPP_MESSAGE_MODE=TEMPLATE
+APP_WHATSAPP_TICKET_CONFIRMATION_TEMPLATE_ID=<gupshup-template-id>
+APP_WHATSAPP_TICKET_CONFIRMATION_LANGUAGE_CODE=en
+APP_WHATSAPP_TICKET_CONFIRMATION_TEMPLATE_PARAMS=passengerName,bookingReference,route,travelDate,departureTime,seatLabels,ticketUrl
+APP_WHATSAPP_TICKET_BASE_URL=https://travelranchi.com
+```
+
+`APP_WHATSAPP_MESSAGE_MODE` supports:
+
+- `TEMPLATE` - sends an approved WhatsApp template. Use this for production booking confirmations.
+- `TEXT` - sends a free-form text message, useful for testing inside WhatsApp's customer-service window.
+
+Supported template placeholders:
+
+- `passengerName`
+- `bookingReference`
+- `route`
+- `travelDate`
+- `departureTime`
+- `seatLabels`
+- `ticketUrl`
+
+The feature is fail-soft: if WhatsApp is disabled, misconfigured, or temporarily down, the booking still succeeds and the failure is logged.
+
+Gupshup API details used by the app:
+
+- Template endpoint: `https://api.gupshup.io/wa/api/v1/template/msg`
+- Text/session endpoint: `https://api.gupshup.io/wa/api/v1/msg`
+- Auth header: `apikey`
+- Request format: `application/x-www-form-urlencoded`
+
 Start the stack:
 
 ```sh
